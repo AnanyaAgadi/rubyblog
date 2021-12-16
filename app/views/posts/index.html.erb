@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div class="container-fluid">
+  <div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-sm">
+      <h1><%= post.title %></h1>
+      <p><%= post.author %></p>
+      <p><%= post.date %></p>
+      <p><%= post.description %></p>
+      <%= link_to 'View', post_path(post) %>  
+    </div><!-- /col -->
+  <% end %>
+  </div>
+</div>
+
+
+
+<%= link_to 'New Post', new_post_path %>
