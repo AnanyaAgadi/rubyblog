@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
     before_action :set_post, only: [:edit, :update]
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 2)
   end
 
   
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.order("created_at DESC")
   end
 
   
