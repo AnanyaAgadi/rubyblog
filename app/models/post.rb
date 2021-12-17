@@ -2,7 +2,8 @@ class Post < ApplicationRecord
   validates :name, presence: true
   validates :user, presence: true 
   validates :description, presence:true
-  belongs_to :user
+  
+  # belongs_to :user
   has_many :comments
 
   self.per_page = 2
