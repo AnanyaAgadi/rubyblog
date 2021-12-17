@@ -5,20 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.5.3
+* Rails version - 5.2.6
 
-* System dependencies
+database used in development - sqlite3
 
-* Configuration
+database used in production - postgreSQL
 
-* Database creation
 
-* Database initialization
+rails g model post title:string date:datetime author:string description:text
 
-* How to run the test suite
+Rails g  controller posts
 
-* Services (job queues, cache servers, search engines, etc.)
+Rails g controller page index
 
-* Deployment instructions
+Post.create(title:”Post 1”, date:16/12/2021, author: “ Mina J”, description: “Simple handbook”)
 
-* ...
+Rails g scaffold user name:string email:string 
+
+
+rails generate model comment user:references body:text
+rating:integer post:references
+
